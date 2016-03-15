@@ -374,7 +374,7 @@ module UIAutoMonkey
 
     def pull_crash_files(times)
       if !is_simulator
-        `idevicecrashreport -u #{device} -e -k #{crash_save_dir(times)}`
+        `idevicecrashreport -u #{device} -e #{crash_save_dir(times)}`
       else
         `cp #{sim_crash_report_dir}/* #{crash_save_dir(times)}`
       end
